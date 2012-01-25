@@ -58,7 +58,7 @@ function! s:Extradite(bang) abort
     let b:git_tree_dir = fugitive#buffer().repo().tree()
     execute b:cd.' '.b:git_tree_dir
     autocmd BufEnter <buffer>       exe b:cd.' '.b:git_tree_dir
-    autocmd BufLeave <buffer>       exe b:cd.' '.getbufvar('<afile>','stashed_dir')
+    "autocmd BufLeave <buffer>       exe b:cd.' '.getbufvar('<afile>','stashed_dir')
     autocmd BufEnter <buffer>       call s:ExtraditeSyntax()
     autocmd BufLeave <buffer>       hi! link CursorLine NONE
     autocmd BufLeave <buffer>       hi! link Cursor NONE
